@@ -23,8 +23,8 @@ function generateRandom(){
 
 function numberHighlighter(num){
 
-    document.getElementById('board-list').querySelectorAll('div')[num].style.backgroundColor = "lightsalmon";
-    document.getElementById('user-boards').querySelectorAll('div')[num].style.backgroundColor = "lightgray";
+    document.getElementById('board-list').querySelectorAll('div')[num-1].style.backgroundColor = "lightsalmon";
+    document.getElementById('user-boards').querySelectorAll('div')[Math.round((num-1)/3.3)].style.backgroundColor = "lightgray";
 }
 function userNumGenerator(){
     let userNumbers = [];
