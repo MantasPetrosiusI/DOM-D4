@@ -1,45 +1,49 @@
 const randArray = [];
 function generateRandom(){
     let rand = Math.floor(Math.random()*76+1);
-    if(!randArray.includes(rand) && randArray.length < 6){
+    if(!randArray.includes(rand)){
         randArray.push(rand);
         console.log(randArray)
     }
 }
 
-let wholeBoard = document.getElementById("board-list");
-wholeBoard.addEventListener('generateRandom()', function(){
-    let select = wholeBoard[randArray[randArray.length]];
-    select.classList.toggle('selectedNum');
-})
-    const boardNumber = document.getElementById('noOfBoards').innerText;
+function numberHighlighter(){
+    let light = document.getElementsById('user-boards');
+    for (let i = 0; i< light.length; i++) {
+        if(randArray[randArray.length] === light[i].innerText){
+            light[i].classList.add('selectedNum')
+        }
+    }
+}
 
-
+    const boardNumber = document.getElementsByClassName('userBoards')[0].value;
+    console.log(boardNumber)
 function createUserBoard(){
 
         let userNumbers = [];
-    for (let i = 0; i <24; i++) {
+         for (let i = 0; i <24; i++) {
             let rand = Math.floor(Math.random()*76+1);
                 if(!userNumbers.includes(rand)){
-        userNumbers.push(rand);
+                    userNumbers.push(rand);
                 }else{
                     rand = Math.floor(Math.random()*76+1);
                     userNumbers.push(rand);
-                    }
                 }
-    let boards = document.createElement('ul')
-    boards.classList.add('user-list')
-    for (let bingoNumbers = 1; bingoNumbers <=24; bingoNumbers++) {
-        let userBingoNode = document.createElement("div");
-        userBingoNode.classList.add("bingoNumber");
-        userBingoNode.innerText = userNumbers[bingoNumbers-1];
-        document.getElementById("container-board").appendChild(userBingoNode);
+            }
+        
+        for (let bingoNumbers = 1; bingoNumbers <=24;      bingoNumbers++) {
+            let userBingoNode = document.createElement("div");
+            userBingoNode.classList.add("bingoNumber");
+            userBingoNode.innerText = userNumbers[bingoNumbers-1];
+            document.getElementById("user-boards").appendChild(userBingoNode);
         }
         
 }
     
 function multipleBoards(){
     for (let i = 0; i < boardNumber; i++) {
+        let boards = document.createElement('ul')
+        boards.classList.add('user-list'+i)
         createUserBoard();
         console.log(boardNumber)
     }

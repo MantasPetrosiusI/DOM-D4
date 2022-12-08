@@ -14,16 +14,20 @@ The cell with same number should be highlighted in some way on the bingo board.
     <h1>Welcome to first Bingo evening!</h1>
     <div id="container">
         <div id="userInput">
-            <input type="number" class="userBoards" id="noOfBoards">
-            <input type="button" value="Create User Boards" onclick ="multipleBoards()">
+            <input type="number" class="userBoards" value="0">
+            <input type="button" value="Create User Boards" onclick ="createUserBoard()">
             <input type="button" onclick="generateRandom()" value="Random number" id="randomizer">
         </div>
     
     <div id="container-board">
-            <ul id="board-list">
+            <div id="board-list">
 
-            </ul>
+            </div>
+            <div id="user-boards">
+
     </div>
+    </div>
+    
 </div>
 <script src="script.js"></script>
 </body>
