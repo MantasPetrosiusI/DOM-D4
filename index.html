@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Bingo</title>
+</head>
+/*
+The cell with same number should be highlighted in some way on the bingo board.
+*/
+<body>
+    <h1>Welcome to first Bingo evening!</h1>
+    <div id="container">
+        <div id="userInput">
+            <input type="number" class="userBoards" id="noOfBoards">
+            <input type="button" value="Create User Boards" onclick ="multipleBoards()">
+            <input type="button" onclick="generateRandom()" value="Random number" id="randomizer">
+        </div>
+    
+    <div id="container-board">
+            <ul id="board-list">
+
+            </ul>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
